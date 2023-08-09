@@ -21,7 +21,7 @@ public class DynamoFixture : IAsyncLifetime
             .UseContainer()
             .WithName("dynamocounters")
             .DeleteIfExists(true, true)
-            .UseImage("amazon/dynamodb-local:2.0.0")
+            .UseImage("amazon/dynamodb-local:1.22.0")
             .KeepContainer()
             .KeepRunning()
             .Command(string.Empty, new[] { "-jar", "DynamoDBLocal.jar", "-inMemory", "-sharedDb" })
